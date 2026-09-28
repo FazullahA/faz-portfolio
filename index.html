@@ -6,10 +6,11 @@
     <title>Fazullah Amanullah | Senior Façade Specialist & Structural Designer</title>
     <style>
         :root {
-            --primary: #1a365d;
-            --accent: #2b6cb0;
-            --text: #2d3748;
-            --bg: #f7fafc;
+            --primary: #0f172a; /* Deep Slate Navy */
+            --accent: #2563eb;  /* Professional Royal Blue */
+            --accent-light: #eff6ff;
+            --text: #334155;
+            --bg: #f8fafc;
             --white: #ffffff;
             --border: #e2e8f0;
         }
@@ -22,44 +23,101 @@
             line-height: 1.6;
         }
         header {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--white);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            border-bottom: 4px solid var(--accent);
         }
         header h1 {
             margin: 0 0 0.5rem 0;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+        }
+        header .title-sub {
+            font-size: 1.2rem;
+            color: #93c5fd;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
         header p {
-            margin: 0.2rem 0;
-            color: #cbd5e0;
-            font-size: 1.05rem;
+            margin: 0.3rem 0;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+        .contact-bar {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+        .contact-bar a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+        .contact-bar a:hover {
+            text-decoration: underline;
         }
         .container {
-            max-width: 900px;
-            margin: 2rem auto;
+            max-width: 1000px;
+            margin: -2rem auto 3rem auto;
             padding: 0 1.5rem;
+            position: relative;
         }
         .card {
             background: var(--white);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
         }
         h2 {
             color: var(--primary);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 0.75rem;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        ul {
-            padding-left: 1.2rem;
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
-        li {
-            margin-bottom: 0.5rem;
+        .badge {
+            background-color: var(--accent-light);
+            color: var(--accent);
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        .project-item {
+            margin-bottom: 1.5rem;
+        }
+        .project-item h3 {
+            margin: 0 0 0.3rem 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .project-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #475569;
         }
         .btn-container {
             display: flex;
@@ -68,22 +126,33 @@
             flex-wrap: wrap;
         }
         .btn {
-            background-color: var(--primary);
+            background-color: var(--accent);
             color: var(--white);
             padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
         }
         .btn:hover {
-            background-color: var(--accent);
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: var(--primary);
+        }
+        .btn-secondary:hover {
+            background-color: #1e293b;
         }
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #718096;
+            padding: 2.5rem;
+            color: #64748b;
             font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            background: var(--white);
         }
     </style>
 </head>
@@ -91,48 +160,68 @@
 
     <header>
         <h1>Fazullah Amanullah</h1>
-        <p>Senior Façade Specialist & Structural Designer</p>
+        <div class="title-sub">Senior Façade Specialist & Structural Designer</div>
         <p>UK Building Envelope Compliance, System R&D & Mega-Project Delivery</p>
-        <p style="margin-top: 1rem; font-size: 0.95rem;">📧 thefazulu@yahoo.com | 📱 +965 9407 0330</p>
+        <div class="contact-bar">
+            <span>📧 <a href="mailto:thefazulu@yahoo.com">thefazulu@yahoo.com</a></span>
+            <span>📱 +965 9407 0330</span>
+            <span>📍 Based in Kuwait (Open to UK Remote / Hybrid / Relocation)</span>
+        </div>
     </header>
 
     <div class="container">
         
-        <!-- About Section -->
+        <!-- Profile Card with Action Buttons -->
         <div class="card">
             <h2>Professional Profile</h2>
-            <p>Senior façade specialist and structural designer with 19+ years of engineering practice, including nine years leading UK façade compliance, accreditation, and system R&D for Echo Facades Engineering Solutions Ltd[cite: 1]. Combining hands-on technical delivery with independent R&D leadership, structural steel design, and advanced parametric BIM workflows (Tekla, Rhino/Grasshopper, Revit)[cite: 1].</p>
+            <p>Senior façade specialist and structural designer with 19+ years of engineering practice, including nine years leading UK façade compliance, accreditation, and system R&D for Echo Facades Engineering Solutions Ltd[cite: 1]. Combining hands-on technical delivery with independent R&D leadership, structural steel design, and advanced parametric BIM workflows[cite: 1].</p>
             
             <div class="btn-container">
-                <a href="Fazullah_Amanullah_Portfolio.pptx" class="btn" download>Download Portfolio (PPTX)</a>
+                <a href="Fazullah_Amanullah_Portfolio.pptx" class="btn" download>📥 Download Presentation Portfolio (PPTX)</a>
             </div>
         </div>
 
-        <!-- Core Competencies -->
+        <!-- Core Competencies Grid -->
         <div class="card">
-            <h2>Core Competencies</h2>
-            <ul>
-                <li><strong>Façade Compliance & Testing:</strong> BS 8414-2 fire testing, EN 13501, CWCT performance testing, KIWA BDA Agrément, UL certification, and EAD ETICS test programmes[cite: 1].</li>
-                <li><strong>Digital & Parametric Design:</strong> Advanced proficiency in Rhino/Grasshopper, Tekla Structures custom components, Autodesk Revit/Dynamo, and Navisworks[cite: 1].</li>
-                <li><strong>Structural & Modular Engineering:</strong> Structural steel connection design, light-gauge steel (LGS) modular framing, temporary works, and Factory Production Control (FPC)[cite: 1].</li>
-                <li><strong>Regulatory Leadership:</strong> Authored a live, RIBA-approved CPD seminar on Building Safety Act Gateway 2 compliance[cite: 1].</li>
-            </ul>
+            <h2>Core Competencies & Expertise</h2>
+            <div class="badge-container">
+                <span class="badge">BS 8414-2 Fire Testing</span>
+                <span class="badge">CWCT Performance Testing</span>
+                <span class="badge">KIWA BDA Agrément</span>
+                <span class="badge">UL Certification</span>
+                <span class="badge">Building Safety Act Gateway 2</span>
+                <span class="badge">Rhino / Grasshopper</span>
+                <span class="badge">Tekla Structures Custom Components</span>
+                <span class="badge">Revit & Dynamo</span>
+                <span class="badge">Light-Gauge Steel (LGS)</span>
+                <span class="badge">WUFI Hygrothermal Modeling</span>
+            </div>
         </div>
 
-        <!-- Flagship UK R&D -->
+        <!-- Featured Projects / Systems -->
         <div class="card">
-            <h2>UK System R&D & Flagship Projects</h2>
-            <ul>
-                <li><strong>Salamander BrickSlip Rainscreen System:</strong> Created the multi-row profiled carrier concept (1-7 row geometry), carrying out structural verification and coordinating validation through CWCT, UL, and BS 8414-2 / BRE fire testing[cite: 1].</li>
-                <li><strong>RAFI Prefabricated ETICS System:</strong> Engineered prefabricated panels featuring mechanical through-fixing, managing EAD performance testing at Lucideon laboratories and technical assessment with KIWA[cite: 1].</li>
-                <li><strong>Kuwait International Airport (Terminal 2):</strong> Served as Senior Structural Designer for 9+ years, architecting parametric workflows (Rhino/Grasshopper linked to Tekla) to transform complex free-form geometry into precise, fabrication-ready steel assemblies, including signature waterfall features[cite: 1].</li>
-            </ul>
+            <h2>Flagship Systems & Mega-Projects</h2>
+            
+            <div class="project-item">
+                <h3>1. Salamander Multi-Row BrickSlip Rainscreen System</h3>
+                <p>Created the multi-row profiled carrier concept (1 to 7 row geometry) using Magnelis and stainless steel; carried out structural calculations and coordinated validation through CWCT, UL, and BS 8414-2 / BRE fire testing[cite: 1].</p>
+            </div>
+            <br>
+            <div class="project-item">
+                <h3>2. RAFI Prefabricated ETICS BrickSlip System</h3>
+                <p>Engineered prefabricated direct-fix panels with mechanical through-fixing; managed EAD 040089 performance testing at Lucideon laboratories and technical assessment toward KIWA BDA Agrément certification[cite: 1].</p>
+            </div>
+            <br>
+            <div class="project-item">
+                <h3>3. Kuwait International Airport (Terminal 2)</h3>
+                <p>Served as Senior Structural Designer for 9+ years on the landmark superstructure, architecting parametric workflows (Rhino/Grasshopper linked to Tekla Structures) to transform complex free-form geometry into precise, fabrication-ready steel packages[cite: 1].</p>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Fazullah Amanullah. All rights reserved.</p>
+        <p>&copy; 2026 Fazullah Amanullah. All rights reserved. Built for UK Engineering & Façade Leadership.</p>
     </footer>
 
 </body>
